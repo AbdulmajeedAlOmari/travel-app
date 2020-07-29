@@ -1,0 +1,15 @@
+$first-color: #b7c6e7;
+$second-color: #e5edff;
+$third-color: #ffffff;
+$fourth-color: #8d96a9;
+$fifth-color: #3e4772;
+
+.line-seperator-container {
+  display: flex;
+  justify-content: center;
+}
+
+.line-seperator {
+  width: 60%;
+  border-top: 2px solid $fourth-color;
+}

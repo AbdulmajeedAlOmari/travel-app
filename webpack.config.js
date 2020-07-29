@@ -19,6 +19,29 @@ const commonConfig = merge([
                 loader: 'babel-loader'
             },
             {
+              test: /\.(png|svg|jpg|gif)$/,
+              use: [
+                {
+                  loader: 'file-loader',
+                  options: {
+                    name: '[name].[hash].[ext]',
+                    outputPath: 'assets/img',
+                    esModule: false
+                  }
+                },
+                {
+                  loader: 'image-webpack-loader',
+                  options: {
+                    bypassOnDebug: false,
+                    disable: false,
+                    webp: {
+                      quality: 90
+                    }
+                  },
+                },
+              ]
+            },
+            {
                 test: /\.scss$/,
                 use: [
                   MiniCssExtractPlugin.loader,
@@ -37,25 +60,12 @@ const commonConfig = merge([
                   'sass-loader' ]
             },
             {
-              test: /\.(png|svg|jpg|gif)$/,
-              use: [
-                'file-loader?outputPath=resources/images/',
-                {
-                  loader: 'image-webpack-loader',
-                  options: {
-                    bypassOnDebug: false,
-                    disable: false,
-                    webp: {
-                      quality: 90
-                    }
-                  },
-                },
-              ]
+              test: /\.html$/i,
+              loader: 'html-loader',
             }
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({filename: '[name].css'}),
         new CleanWebpackPlugin({
           // Simulate the removal of files
           dry: true,

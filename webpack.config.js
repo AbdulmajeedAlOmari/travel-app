@@ -16,11 +16,15 @@ const commonConfig = merge([
             {
                 test: '/\.js$/',
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                loader: 'babel-loader'
             },
             {
                 test: /\.scss$/,
                 use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
+            },
+            {
+              test: /\.(png|svg|jpg|gif)$/,
+              loader: 'file-loader?outputPath=resources/images/'
             }
         ]
     },

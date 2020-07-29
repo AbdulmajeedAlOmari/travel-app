@@ -24,7 +24,19 @@ const commonConfig = merge([
             },
             {
               test: /\.(png|svg|jpg|gif)$/,
-              loader: 'file-loader?outputPath=resources/images/'
+              use: [
+                'file-loader?outputPath=resources/images/',
+                {
+                  loader: 'image-webpack-loader',
+                  options: {
+                    bypassOnDebug: false,
+                    disable: false,
+                    webp: {
+                      quality: 90
+                    }
+                  },
+                },
+              ]
             }
         ]
     },

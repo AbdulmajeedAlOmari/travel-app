@@ -1,8 +1,4 @@
-$first-color: #b7c6e7;
-$second-color: #e5edff;
-$third-color: #ffffff;
-$fourth-color: #8d96a9;
-$fifth-color: #3e4772;
+@import './common/colors.scss';
 
 .line-seperator-container {
   display: flex;

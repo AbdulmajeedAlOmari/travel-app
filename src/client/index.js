@@ -1,4 +1,4 @@
-
+import './styles/custom.scss'
 import './styles/defaults.scss'
 import './styles/header.scss'
 import './styles/base.scss'

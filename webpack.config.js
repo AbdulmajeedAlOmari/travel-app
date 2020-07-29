@@ -20,7 +20,21 @@ const commonConfig = merge([
             },
             {
                 test: /\.scss$/,
-                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
+                use: [
+                  MiniCssExtractPlugin.loader,
+                  'css-loader',
+                  {
+                    loader: 'postcss-loader', // Run post css actions
+                    options: {
+                      plugins: function () {
+                        return [
+                          require('precss'),
+                          require('autoprefixer')
+                        ];
+                      }
+                    }
+                  },
+                  'sass-loader' ]
             },
             {
               test: /\.(png|svg|jpg|gif)$/,

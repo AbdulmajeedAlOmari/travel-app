@@ -10,3 +10,6 @@ import './styles/slide-show.scss'
 import './styles/form.scss'
 import './styles/decorators.scss'
 import './styles/footer.scss'
+
+// Import fontawesome
+import '@fortawesome/fontawesome-free/js/all.min.js'

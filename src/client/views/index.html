@@ -18,10 +18,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#travel-planner-container">Plan Your Trip</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Plan Your Trip</a>
+              <a class="nav-link" href="#about-us-header">About Us</a>
             </li>
           </ul>
         </div>
@@ -48,10 +48,76 @@
       </div>
     </div>
 
+    <div id="travel-planner-container" class="travel-planner-container">
+      <h3>Where you want to go?</h3>
+      <form class="custom-form-container">
+        <div class="form-group">
+          <label for="city-from">From</label>
+          <input id="city-from" type="text" name="city-from" class="form-control" placeholder="Riyadh">
+          <div class="invalid-feedback">Please provide a valid city name</div>
+        </div>
+
+        <div class="form-group">
+          <label for="city-to">To</label>
+          <input id="city-to" type="text" name="city-to" class="form-control" placeholder="Jeddah">
+          <div class="invalid-feedback">Please provide a valid city name</div>
+        </div>
+
+        <div class="form-group">
+          <label for="departure-date">Departure On</label>
+          <input id="departure-date" type="text" name="departure-date" class="form-control" placeholder="dd/MM/yyyy">
+          <div class="invalid-feedback">Please provide a valid date (dd/MM/yyyy)</div>
+        </div>
+
+<!--        <div class="form-group">-->
+          <button type="submit" class="btn btn-secondary">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            <br/>
+            View Trip
+          </button>
+<!--        </div>-->
+      </form>
+    </div>
+
     <div class="container">
+<!--      Show cards if they exist-->
+<!--      d-none-->
+      <div id="trip-cards-container" class="trip-cards-container">
+        <section class="trip-view-container">
+          <h4>Viewed Trip</h4>
+          <div id="viewed-trip" class="viewed-trip">
+<!--            We should put a viewed trip here-->
+            <div class="card">
+              <img src="https://image.shutterstock.com/image-photo/rear-view-friends-on-road-260nw-358226087.jpg" class="card-img-top" alt="image">
+              <div class="card-body">
+                <h5 class="card-title">Riyadh</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary"><i class="fas fa-save"></i> Save Trip</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="trip-saved-container">
+          <h4>Saved Trips</h4>
+          <div id="saved-trips" class="saved-trips">
+<!--            We should put saved trips cards in here -->
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="line-seperator-container">
+      <div class="line-seperator"></div>
+    </div>
+
+    <div class="container">
+      <div id="about-us-header" class="about-us-header">
+        <h3>About Us</h3>
+      </div>
+
       <div class="row align-items-center about-row">
-        <div class="col-4">
-          <img src="../public/thumbnail-1.png" alt="Airplane picture" class="img-thumbnail">
+        <div class="col-4 about-us-image-container">
+          <i class="fa fa-plane fa-10x" aria-hidden="true"></i>
         </div>
 
         <div class="col-8">
@@ -64,8 +130,8 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias necessitatibus, perferendis quam, incidunt ab tenetur aspernatur aliquid inventore blanditiis sit harum a dolore ratione, nostrum nam doloremque quae magnam?Modi, voluptate, tempora molestias veritatis eum cupiditate ipsa at saepe ducimus labore cumque ipsum nemo dicta corporis est quis sequi nobis quaerat aliquam numquam vero culpa. Dicta, ad? Quia, cupiditate.</p>
         </div>
 
-        <div class="col-4">
-          <img src="../public/thumbnail-1.png" alt="Airplane picture" class="img-thumbnail">
+        <div class="col-4 about-us-image-container">
+          <i class="fa fa-plane fa-10x fa-flip-horizontal" aria-hidden="true"></i>
         </div>
       </div>
     </div>

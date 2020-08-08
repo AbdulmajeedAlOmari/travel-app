@@ -3,3 +3,65 @@
 .about-row {
   margin-bottom: 1.5rem;
 }
+
+.travel-planner-container {
+  background: $fifth-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: $third-color;
+  margin-bottom: 3rem;
+  padding: 3vh 0;
+  gap: 1.8rem;
+}
+
+.custom-form-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  //align-items: center;
+}
+
+.form-control {
+  color: $third-color !important;
+  background: $fifth-color !important;
+}
+
+.form-control:focus {
+  border-color: $first-color;
+  background: $fifth-color !important;
+  box-shadow: none;
+  color: $third-color !important;
+}
+
+::placeholder {
+  color: $fourth-color !important;
+  opacity: 0.9 !important;
+}
+
+.trip-cards-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.about-us-header {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-us-image-container {
+  text-align: center;
+}
+
+.card {
+  background: $fourth-color;
+  color: $third-color;
+}
+
+.custom-save-button {
+  background: $first-color;
+}

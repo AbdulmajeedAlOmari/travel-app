@@ -13,3 +13,11 @@ import './styles/footer.scss'
 
 // Import fontawesome
 import '@fortawesome/fontawesome-free/js/all.min.js'
+
+// Import custom form validator
+// import './js/form-validator'
+import './js/form-validator'
+import './js/form-submission'
+
+export {
+}

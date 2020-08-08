@@ -12,6 +12,18 @@ const validateInput = (input, regex) => {
     return regex.test(input)
 }
 
+const handleErrorMessageShowingAndHiding = (inputField, isValidInput) => {
+    const containsInvalidClass = inputField.classList.contains(INVALID_CLASS_NAME)
+
+    if(!isValidInput && !containsInvalidClass) {
+        // Show error message if input is incorrect
+        inputField.classList.add(INVALID_CLASS_NAME)
+    } else if(isValidInput && containsInvalidClass) {
+        // Hide error message if input is correct
+        inputField.classList.remove(INVALID_CLASS_NAME)
+    }
+}
+
 // When user corrects their mistake, remove error message for a given field immediately
 const handleInputChange = (inputField, newInput, validationRegex) => {
     // In case there are no invalid classes on this input, don't validate new input (no need)
@@ -27,16 +39,9 @@ const handleInputChange = (inputField, newInput, validationRegex) => {
 
 // If invalid input and user left this field, then show error message to user
 const handleInputBlur = (inputField, validationRegex) => {
-    const containsInvalidClass = inputField.classList.contains(INVALID_CLASS_NAME)
     const isValidInput = validateInput(inputField.value, validationRegex)
 
-    if(!isValidInput && !containsInvalidClass) {
-        // Show error message if input is incorrect
-        inputField.classList.add(INVALID_CLASS_NAME)
-    } else if(isValidInput && containsInvalidClass) {
-        // Hide error message if input is correct
-        inputField.classList.remove(INVALID_CLASS_NAME)
-    }
+    handleErrorMessageShowingAndHiding(inputField, isValidInput)
 }
 
 /* Remove error messages when new input meets requirements */
@@ -69,6 +74,10 @@ const validateAllInput = () => {
     const isFromCityInputValid = validateInput(fromCityInput.value, cityNameRegex)
     const isToCityInputValid = validateInput(toCityInput.value, cityNameRegex)
     const isDepartureDateInputValid = validateInput(departureDateInput.value, dateRegex)
+
+    handleErrorMessageShowingAndHiding(fromCityInput, isFromCityInputValid)
+    handleErrorMessageShowingAndHiding(toCityInput, isToCityInputValid)
+    handleErrorMessageShowingAndHiding(departureDateInput, isDepartureDateInputValid)
 
     return (
         isFromCityInputValid

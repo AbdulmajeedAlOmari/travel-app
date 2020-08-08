@@ -1,13 +1,15 @@
-import { validateAllInput } from './form-validator'
-
-document.addEventListener('submit', (e) => {
+const handleSubmission = (event) => {
     // Prevent default POST behaviour
-    e.preventDefault()
+    event.preventDefault()
 
-    if(!validateAllInput()) {
+    if(!Client.validateAllInput()) {
         // Prevent user from submission
         return
     }
 
     // TODO: send input to backend
-})
+}
+
+export {
+    handleSubmission
+}

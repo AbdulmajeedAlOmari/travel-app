@@ -1,3 +1,6 @@
+import { validateAllInput } from './js/form-validator'
+import { handleSubmission } from './js/form-submission'
+
 // Import bootstrap javascript files
 import 'bootstrap'
 
@@ -14,10 +17,7 @@ import './styles/footer.scss'
 // Import fontawesome
 import '@fortawesome/fontawesome-free/js/all.min.js'
 
-// Import custom form validator
-// import './js/form-validator'
-import './js/form-validator'
-import './js/form-submission'
-
 export {
+    validateAllInput,
+    handleSubmission
 }

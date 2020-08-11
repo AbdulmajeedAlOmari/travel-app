@@ -1,4 +1,4 @@
-// Constant contains class name to show/hide error messages
+// Constant contains class name to show/hide error messages (bootstrap built-in)
 const INVALID_CLASS_NAME = 'is-invalid'
 
 const fromCityInput = document.getElementById('city-from')

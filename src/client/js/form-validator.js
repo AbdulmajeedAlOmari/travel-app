@@ -6,7 +6,7 @@ const toCityInput = document.getElementById('city-to')
 const departureDateInput = document.getElementById('departure-date')
 
 const cityNameRegex = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/
-const dateRegex = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i
+const dateRegex = /^\d{4}(-)(((0)[0-9])|((1)[0-2]))(-)([0-2][0-9]|(3)[0-1])$/i
 
 const validateInput = (input, regex) => {
     return regex.test(input)
@@ -71,9 +71,17 @@ departureDateInput.addEventListener('blur', () => {
 })
 
 const validateAllInput = () => {
+    let isValidDate = true
+
+    const date = new Date(departureDateInput.value)
+
+    if(date < new Date()) {
+        isValidDate = false
+    }
+
     const isFromCityInputValid = validateInput(fromCityInput.value, cityNameRegex)
     const isToCityInputValid = validateInput(toCityInput.value, cityNameRegex)
-    const isDepartureDateInputValid = validateInput(departureDateInput.value, dateRegex)
+    const isDepartureDateInputValid = validateInput(departureDateInput.value, dateRegex) && isValidDate
 
     handleErrorMessageShowingAndHiding(fromCityInput, isFromCityInputValid)
     handleErrorMessageShowingAndHiding(toCityInput, isToCityInputValid)
@@ -83,6 +91,7 @@ const validateAllInput = () => {
         isFromCityInputValid
         && isToCityInputValid
         && isDepartureDateInputValid
+        && isValidDate
     )
 }
 

@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const { merge } = require('webpack-merge')
 
 const commonConfig = merge([
@@ -74,7 +75,8 @@ const commonConfig = merge([
           // Automatically remove all unused webpack assets on rebuild
           cleanStaleWebpackAssets: true,
           protectWebpackAssets: false
-      }),
+        }),
+        new MomentLocalesPlugin()
     ]
   },
 ]);

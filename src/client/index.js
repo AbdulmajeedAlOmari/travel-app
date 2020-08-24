@@ -1,5 +1,10 @@
+import { Trip } from './js/common/trip'
 import { validateAllInput } from './js/form-validator'
 import { handleSubmission } from './js/form-submission'
+import { handleRetrievedTrip, saveViewedTrip, deleteSavedTrip } from './js/trip-manager'
+import { viewTripCard, hideViewedTripCard } from './js/viewed-trip';
+import { addSavedTripCard, setSavedTripCards } from './js/saved-trips'
+import { saveTripsToLocalStorage, loadTripsFromLocalStorage } from './js/local-storage-manager'
 
 // Import bootstrap javascript files
 import 'bootstrap'
@@ -18,6 +23,16 @@ import './styles/footer.scss'
 import '@fortawesome/fontawesome-free/js/all.min.js'
 
 export {
+    Trip,
     validateAllInput,
-    handleSubmission
+    handleSubmission,
+    handleRetrievedTrip,
+    saveViewedTrip,
+    deleteSavedTrip,
+    viewTripCard,
+    hideViewedTripCard,
+    addSavedTripCard,
+    setSavedTripCards,
+    saveTripsToLocalStorage,
+    loadTripsFromLocalStorage,
 }

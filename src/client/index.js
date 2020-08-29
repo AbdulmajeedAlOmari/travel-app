@@ -1,4 +1,3 @@
-import { Trip } from './js/common/trip'
 import { validateAllInput } from './js/form-validator'
 import { handleSubmission } from './js/form-submission'
 import { handleRetrievedTrip, saveViewedTrip, deleteSavedTrip } from './js/trip-manager'
@@ -23,7 +22,6 @@ import './styles/footer.scss'
 import '@fortawesome/fontawesome-free/js/all.min.js'
 
 export {
-    Trip,
     validateAllInput,
     handleSubmission,
     handleRetrievedTrip,

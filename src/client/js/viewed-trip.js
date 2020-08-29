@@ -2,11 +2,11 @@ import moment from 'moment';
 
 const INVISIBLE_CLASS_NAME = 'd-none'
 
-const viewedTripContainer           = document.getElementById('viewed-trip-container')
-const viewedTripImage               = document.getElementById('viewed-trip-image')
-const viewedTripHeader              = document.getElementById('viewed-trip-header')
-const viewedTripTemperaturesHolder  = document.getElementById('viewed-trip-temperature-list')
-const viewedTripDepartureCountdown  = document.getElementById('viewed-trip-departure-countdown')
+const viewedTripContainer               = document.getElementById('viewed-trip-container')
+const viewedTripImage                   = document.getElementById('viewed-trip-image')
+const viewedTripHeader                  = document.getElementById('viewed-trip-header')
+const viewedTripTemperatureTableBody    = document.getElementById('temperature-table-body')
+const viewedTripDepartureCountdown      = document.getElementById('viewed-trip-departure-countdown')
  
 const viewTripCard = ({ fromCity, toCity, toCityImageURL, toCountryName, departureDate, arrayOfTemperatures }) => {
 
@@ -15,15 +15,36 @@ const viewTripCard = ({ fromCity, toCity, toCityImageURL, toCountryName, departu
 
     const tripTemperaturesFragment = document.createDocumentFragment()
 
-    arrayOfTemperatures.forEach(temperature => {
-        const li = document.createElement('li')
-        li.innerText = temperature.averageTemp
+    let temperatureCount = 1
 
-        tripTemperaturesFragment.appendChild(li)
+    arrayOfTemperatures.forEach(temperature => {
+        const tableRowElement = document.createElement('tr')
+
+        const temperatureNumberCell     = document.createElement('th')
+        const temperatureDateCell       = document.createElement('td')
+        const temperatureAvgTempCell    = document.createElement('td')
+        const temperatureMinTempCell    = document.createElement('td')
+        const temperatureMaxTempCell    = document.createElement('td')
+
+        temperatureNumberCell.innerText     = temperatureCount++
+        temperatureDateCell.innerText       = temperature.date
+        temperatureAvgTempCell.innerText    = temperature.averageTemp
+        temperatureMinTempCell.innerText    = temperature.minTemp
+        temperatureMaxTempCell.innerText    = temperature.maxTemp
+
+        temperatureNumberCell.scope = 'row'
+
+        tableRowElement.appendChild(temperatureNumberCell)
+        tableRowElement.appendChild(temperatureDateCell)
+        tableRowElement.appendChild(temperatureAvgTempCell)
+        tableRowElement.appendChild(temperatureMinTempCell)
+        tableRowElement.appendChild(temperatureMaxTempCell)
+
+        tripTemperaturesFragment.appendChild(tableRowElement)
     })
 
-    viewedTripTemperaturesHolder.innerHTML = ''
-    viewedTripTemperaturesHolder.appendChild(tripTemperaturesFragment)
+    viewedTripTemperatureTableBody.innerHTML = ''
+    viewedTripTemperatureTableBody.appendChild(tripTemperaturesFragment)
 
     viewedTripDepartureCountdown.innerText = moment(departureDate).fromNow() + ` (${departureDate})`
 

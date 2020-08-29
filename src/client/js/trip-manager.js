@@ -2,6 +2,8 @@
 // ID prefix of trips
 const TRIP_ID_PREFIX = 'trip-'
 
+const saveTripSubmitButton = document.getElementById('save-trip-submit-button')
+
 // Currently viewed trip (initially none)
 let viewedTrip = null
 
@@ -76,6 +78,9 @@ const deleteSavedTrip = (toBeDeletedTrip) => {
 
 // When the page is loaded (or refreshed), get saved trips from local-storage
 window.addEventListener('load', onPageLoad)
+
+// Once save trip button is clicked, save trip to the list
+saveTripSubmitButton.addEventListener('click', saveViewedTrip)
 
 export {
     handleRetrievedTrip,

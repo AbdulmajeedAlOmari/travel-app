@@ -1,4 +1,5 @@
 @import './common/colors.scss';
+@import './common/width.scss';
 
 .about-row {
   margin-bottom: 1.5rem;
@@ -60,7 +61,7 @@
 }
 
 .viewed-trip {
-  max-width: 80vh;
+  max-width: 80vw;
   margin-bottom: 3rem;
 }
 
@@ -88,4 +89,35 @@
 
 .table-dark {
   background-color: $fifth-color;
+}
+
+
+@media screen and (max-width: $min-width) {
+  body{font-size: 10px;}
+
+  h5 {
+    font-size: 1.1rem;
+  }
+
+  .travel-planner-container {
+    flex-direction: column;
+  }
+
+  .custom-form-container {
+    flex-direction: column;
+  }
+
+  .saved-trips-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+
+  //.card-title {
+  //  font-size: 1rem;
+  //}
+
+  //.table {
+  //  font-size: 0.45rem;
+  //}
 }

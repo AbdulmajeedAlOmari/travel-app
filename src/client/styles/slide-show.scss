@@ -1,5 +1,5 @@
 @import './common/colors.scss';
-
+@import './common/width.scss';
 
 .slide-show-container {
   width: 100%;
@@ -78,5 +78,19 @@
   }
   30% {
     opacity: 0
+  }
+}
+
+@media screen and (max-width: $min-width) {
+  .slide-show-container {
+    height: 50vh;
+  }
+
+  .header-text {
+    font-size: 2rem;
+  }
+
+  .lead-text {
+    font-size: 1.5rem;
   }
 }

@@ -1,1 +1,27 @@
 @import './common/colors.scss';
+
+.footer {
+  left: 0;
+  bottom: 0;
+  height: 10vh;
+  width: 100%;
+  background-color: $fifth-color;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $third-color;
+}
+
+.footer-text {
+  margin: 0;
+}
+
+.github-link {
+  color: $third-color;
+}
+
+.github-link:hover {
+  color: $first-color;
+}

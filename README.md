@@ -21,3 +21,6 @@ Please note that service workers run in production build only. Since the webpack
 ## Unit Tests
 You can run unit tests using the following command:
 - `npm run test`
+
+## Production Environment
+The application deployed using Heroku. You visit the page by clicking [here](https://ammalomari-travel-app.herokuapp.com/).

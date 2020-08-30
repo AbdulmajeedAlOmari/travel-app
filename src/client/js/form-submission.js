@@ -47,9 +47,8 @@ const handleSubmission = async (event) => {
         return
     }
 
+    // Disable 'View Trip' button to prevent multiple requests go to backend simultaneously
     disableViewTripButton()
-
-    // <div class="spinner-border text-light" role="status"><span class="sr-only">Loading...</span></div>
 
     axios.get('/travel',{
         params: {
@@ -83,6 +82,7 @@ const handleSubmission = async (event) => {
             }
         )
 
+        // Enable 'View Trip' button again for user to allow them to inquire for another city
         enableViewTripButton()
     })
     .catch(e => {

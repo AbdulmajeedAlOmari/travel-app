@@ -44,31 +44,35 @@ const handleInputBlur = (inputField, validationRegex) => {
     handleErrorMessageShowingAndHiding(inputField, isValidInput)
 }
 
-/* Remove error messages when new input meets requirements */
-fromCityInput.addEventListener('input', (e) => {
-    handleInputChange(fromCityInput, e.target.value, cityNameRegex)
-})
 
-toCityInput.addEventListener('input', (e) => {
-    handleInputChange(toCityInput, e.target.value, cityNameRegex)
-})
 
-departureDateInput.addEventListener('input', (e) => {
-    handleInputChange(departureDateInput, e.target.value, dateRegex)
-})
+document.addEventListener('DOMContentLoaded', function () {
+    /* Remove error messages when new input meets requirements */
+    fromCityInput.addEventListener('input', (e) => {
+        handleInputChange(fromCityInput, e.target.value, cityNameRegex)
+    })
 
-/* Show error messages when new input meets requirements */
-fromCityInput.addEventListener('blur', () => {
-    handleInputBlur(fromCityInput, cityNameRegex)
-})
+    toCityInput.addEventListener('input', (e) => {
+        handleInputChange(toCityInput, e.target.value, cityNameRegex)
+    })
 
-toCityInput.addEventListener('blur', () => {
-    handleInputBlur(toCityInput, cityNameRegex)
-})
+    departureDateInput.addEventListener('input', (e) => {
+        handleInputChange(departureDateInput, e.target.value, dateRegex)
+    })
 
-departureDateInput.addEventListener('blur', () => {
-    handleInputBlur(departureDateInput, dateRegex)
-})
+    /* Show error messages when new input does not meet requirements */
+    fromCityInput.addEventListener('blur', () => {
+        handleInputBlur(fromCityInput, cityNameRegex)
+    })
+
+    toCityInput.addEventListener('blur', () => {
+        handleInputBlur(toCityInput, cityNameRegex)
+    })
+
+    departureDateInput.addEventListener('blur', () => {
+        handleInputBlur(departureDateInput, dateRegex)
+    })
+});
 
 const validateAllInput = () => {
     let isValidDate = true

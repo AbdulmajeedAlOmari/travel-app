@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "start": "nodemon src/server/server.js",
     "build-prod": "webpack --env production",
     "build-dev": "webpack --env development --watch"
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.5.4",
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.0.6",
@@ -37,6 +39,7 @@
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^6.0.0",
+    "jest": "^26.4.2",
     "mini-css-extract-plugin": "^0.9.0",
     "moment-locales-webpack-plugin": "^1.2.0",
     "node-sass": "^4.14.1",
@@ -46,6 +49,7 @@
     "precss": "^4.0.0",
     "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",
+    "supertest": "^4.0.2",
     "terser-webpack-plugin": "^3.0.7",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^5.0.9",
